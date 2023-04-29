@@ -6,9 +6,11 @@ This is a script to use another PC remotely.
 
 
 ### Step 1
-Start server script on your PC.
+Start server script on your PC
 ### Step 2
-Start client scritpt on your second PC.
+Enter the server ip in the config.txt
+### Step 3
+Start client scritpt on your second PC
 
 
 ## Commands
@@ -28,4 +30,4 @@ Clickes a Mousebutton on the second PC with **click \<button\>**
 Sends you a list of base64 encoded images of all attaced cameras with **cam**
 
 
-# THIS IS ONLY FOR EDUCATIONAL PURPOSE.
+## THIS IS FOR EDUCATIONAL PURPOSE ONLY
