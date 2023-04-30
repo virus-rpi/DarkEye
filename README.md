@@ -29,6 +29,8 @@ Moves the curser of the second PC with **goto \<x\> \<y\>**
 Clickes a Mousebutton on the second PC with **click \<button\>**
 ### cam
 Sends you a list of base64 encoded images of all attaced cameras with **cam**
+### exit
+Stops client script
 
 
 
