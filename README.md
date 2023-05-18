@@ -4,14 +4,10 @@ This is a script to use another PC remotely.
 
 ## Instructions
 
-### Step 1
-Enter the server ip in server.py **IP = "x.x.x.x"**
-### Step 2
-Start server script on your PC
-### Step 3
-Enter the server ip in the config.txt
-### Step 4
-Start client scritpt on your second PC
+1. Enter the server ip in server.py **IP = "x.x.x.x"**
+2. Start server script on your PC
+3. Enter the server ip in the config.txt
+4. Start client scritpt on your second PC
 
 
 ## Commands
