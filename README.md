@@ -1,6 +1,6 @@
 # DarkEye
 
-This is a script to use another PC remotely.
+This is a script to use another PC remotely to increase productivity.
 
 ## Instructions
 
